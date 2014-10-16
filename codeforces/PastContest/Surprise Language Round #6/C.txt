@@ -1,0 +1,32 @@
+iin [0]
+iin [1]
+
+/* swap */
+lt [9] [0] [1]
+if [9] 
+set [10] [0]
+if [9] 
+set [0] [1]
+if [9] 
+set [1] [10]
+
+set [3] [0]
+set [4] [1]
+
+co loop
+{
+  lt [5] [1] 0
+  if [5] ac
+  eq [5] [1] 0
+  if [5] ac
+  set [6] [1] 
+  mod [1] [0] [1]
+  set [0] [6]
+}
+
+ca loop
+
+mul [7] [3] [4]
+div [8] [7] [0]
+iout [8]
+ac

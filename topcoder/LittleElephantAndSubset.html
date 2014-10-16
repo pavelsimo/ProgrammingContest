@@ -1,0 +1,39 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>
+Little Elephant from the Zoo of Lviv has a set S. The set S contains the integers 1, 2, 3, ..., <b>N</b>. He considers some non-empty subset of S cool if we can write down all elements of the subset by using each of the digits 0-9 at most once.
+</p>
+<p>
+</p>
+<p>
+Examples:
+The subsets {12,345,67890} and {47,109} are cool.
+The subset {147,342} is not cool because the digit 4 is used twice.
+The subset {404} is not cool for the same reason.
+</p>
+<p>
+</p>
+<p>
+You are given the int <b>N</b>. Let X be the total number of non-empty cool subsets of S. Return the value (X modulo 1,000,000,007).
+</p></td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>LittleElephantAndSubset</td></tr><tr><td>Method:</td><td>getNumber</td></tr><tr><td>Parameters:</td><td>int</td></tr><tr><td>Returns:</td><td>int</td></tr><tr><td>Method signature:</td><td>int getNumber(int N)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td colspan="2"><h3>Limits</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Time limit (s):</td><td>2.000</td></tr><tr><td>Memory limit (MB):</td><td>64</td></tr></table></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>N</b> will be between 1 and 1,000,000,000 (10^9), inclusive.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>3</pre></td></tr></table></td></tr><tr><td><pre>Returns: 7</pre></td></tr><tr><td><table><tr><td colspan="2">All 7 non-empty subsets are cool in this case:
+<ul>
+<li>
+{1, 2, 3}
+</li>
+<li>
+{1, 2}
+</li>
+<li>
+{1, 3}
+</li>
+<li>
+{2, 3}
+</li>
+<li>
+{1}
+</li>
+<li>
+{2}
+</li>
+<li>
+{3}
+</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>10</pre></td></tr></table></td></tr><tr><td><pre>Returns: 767</pre></td></tr><tr><td><table><tr><td colspan="2">In this case, the total number of non-empty subsets is 2^10-1 = 1023. The only not cool subsets are those that contain both 1 and 10. There are 2^8 = 256 of them. Thus, the answer is 1023-256 = 767.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>47</pre></td></tr></table></td></tr><tr><td><pre>Returns: 25775</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>4777447</pre></td></tr></table></td></tr><tr><td><pre>Returns: 66437071</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

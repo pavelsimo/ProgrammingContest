@@ -1,0 +1,31 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>Fox Ciel is going to take a path to meet her friends. The path is tiled with 1x1 square tiles. It is N tiles long and 2 tiles wide. If we imagine that the path is going from the left to the right, we can view it as a rectangle with 2 rows and N columns of tiles.
+The rows of the path are numbered 0 to 1 from top to bottom, and the columns of the path are numbered 0 to N-1 from left to right. Ciel starts at the tile in row 0, column 0. She has to reach the tile in row 0, column N-1.
+<p></p>
+In each step, Ciel can move to an adjacent tile. Two tiles are adjacent if they share at least one point (a side or a corner).
+<p></p>
+Because it rained yesterday, some tiles are covered by puddles of water. Ciel will not step on these tiles. You are given a vector &lt;string&gt; <b>road</b>. The j-th character of i-th element is 'W' if a tile at i-th row of j-th column is covered by  water, and '.' otherwise.
+<p></p>
+Return the string "YES" if she can move to her destination without entering a tile which is filled with water. Otherwise, return "NO".</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>RainyRoad</td></tr><tr><td>Method:</td><td>isReachable</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>string</td></tr><tr><td>Method signature:</td><td>string isReachable(vector &lt;string&gt; road)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Notes</h3></td></tr><tr><td align="center" valign="top">-</td><td>The constraints guarantee that the starting tile and the destination tile are never covered by water.</td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>road</b> will contain exactly 2 elements.</td></tr><tr><td align="center" valign="top">-</td><td>Each elements of <b>road</b> will contain between 2 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>All elements of <b>road</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top">-</td><td>Each character of <b>road</b> will be either '.' or 'W'.</td></tr><tr><td align="center" valign="top">-</td><td>The first character and the last character of 0-th element of <b>road</b> will be '.'.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.W..&quot;
+,&quot;....&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;YES&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">One of the possible ways is as follows. Here, 'F' is the tile occupied by Fox Ciel.
+<pre>
+"FW.."
+"...." 
+
+".W.."
+"F..." 
+
+".W.."
+".F.."
+
+".W.."
+"..F."
+
+".W.F"
+"...."
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.W..&quot;
+,&quot;..W.&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;YES&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.W..W..&quot;
+,&quot;...WWW.&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;NO&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;..&quot;
+,&quot;WW&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;YES&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.WWWW.&quot;
+,&quot;WWWWWW&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;NO&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">5)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.W.W.W.&quot;
+,&quot;W.W.W.W&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;YES&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">6)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.............................................W.&quot;
+,&quot;.............................................W.&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;NO&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

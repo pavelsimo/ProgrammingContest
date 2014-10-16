@@ -1,0 +1,37 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>Lecette is going to open an item shop. 
+On the first day, she will sell only one magical sword. 
+She will keep the shop open for the whole day, from 00:00 to 23:59. 
+<br></br><br></br>
+Since the shop is new, Lecette has only two customers so far, and she has a lot of information about them.
+The information is given as vector &lt;string&gt; <b>customers</b> with exactly 2 elements. 
+Each element represents a single customer who may come to the shop at some point during the day. 
+It is formatted as 
+"<i>T</i><sub>1</sub>,<i>C</i><sub>1</sub>,<i>P</i><sub>1</sub>
+ <i>T</i><sub>2</sub>,<i>C</i><sub>2</sub>,<i>P</i><sub>2</sub>
+ ...
+ <i>T</i><sub><i>N</i></sub>,<i>C</i><sub><i>N</i></sub>,<i>P</i><sub><i>N</i></sub>"
+ (quotes for clarity), where <i>N</i> is a positive integer. 
+An occurrence of three integers <i>T</i><sub><i>j</i></sub>, <i>C</i><sub><i>j</i></sub> and <i>P</i><sub><i>j</i></sub> 
+within <b>customers</b>[<i>i</i>] means that the following event will happen with a probability of <i>P</i><sub><i>j</i></sub> percent: 
+the <i>i</i>-th customer comes to the shop at <i>T</i><sub><i>j</i></sub> o'clock 
+and offers to buy a magical sword at a price of <i>C</i><sub><i>j</i></sub> units of money. 
+The same customer never comes to the shop more than once. 
+That is, the customer does not come to the shop during the day 
+with a probability of 100 - (<i>P</i><sub>1</sub> + <i>P</i><sub>2</sub> + ... + <i>P</i><sub><i>N</i></sub>) percent. 
+The values of <i>T</i><sub><i>j</i></sub> are such that at most one customer can come to the shop during each hour of the day 
+(see the constraints for further clarification). 
+<br></br><br></br>
+When a customer comes to the shop, Lecette can choose to either accept or reject the offer. 
+Let's define <i>S</i> as the amount of money that Lecette will get for the sword (or 0 if she will not sell it). 
+Lecette will act in such a way that maximizes the expected value of <i>S</i>. Return this expected value. 
+</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>NewItemShopTwo</td></tr><tr><td>Method:</td><td>getMaximum</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>double</td></tr><tr><td>Method signature:</td><td>double getMaximum(vector &lt;string&gt; customers)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Notes</h3></td></tr><tr><td align="center" valign="top">-</td><td>The returned value must have an absolute or relative error less than 1e-9. </td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>customers</b> will contain exactly 2 elements. </td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>customers</b> will contain between 5 and 50 characters, inclusive. </td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>customers</b> will be formatted as "<i>T</i><sub>1</sub>,<i>C</i><sub>1</sub>,<i>P</i><sub>1</sub> <i>T</i><sub>2</sub>,<i>C</i><sub>2</sub>,<i>P</i><sub>2</sub> ... <i>T</i><sub><i>N</i></sub>,<i>C</i><sub><i>N</i></sub>,<i>P</i><sub><i>N</i></sub>", where Each <i>T</i><sub><i>j</i></sub>, <i>C</i><sub><i>j</i></sub> and <i>P</i><sub><i>j</i></sub> will be nonnegative integers without extra leading zeros. </td></tr><tr><td align="center" valign="top">-</td><td>Each <i>T</i><sub><i>j</i></sub> will be between 0 and 23, inclusive. </td></tr><tr><td align="center" valign="top">-</td><td>Each <i>C</i><sub><i>j</i></sub> will be between 1 and 100, inclusive. </td></tr><tr><td align="center" valign="top">-</td><td>Each <i>P</i><sub><i>j</i></sub> will be between 1 and 100, inclusive. </td></tr><tr><td align="center" valign="top">-</td><td>For each <i>t</i>, 0 &lt;= <i>t</i> &lt; 24, there will be at most one pair (<i>i</i>, <i>j</i>) such that the value of <i>T</i><sub><i>j</i></sub> in <b>customers</b>[<i>i</i>] is equal to <i>t</i>. </td></tr><tr><td align="center" valign="top">-</td><td>In each element of <b>customers</b>, <i>T</i><sub>1</sub> &lt; <i>T</i><sub>2</sub> &lt; ... &lt; <i>T</i><sub><i>N</i></sub> will hold. </td></tr><tr><td align="center" valign="top">-</td><td>In each element of <b>customers</b>, <i>P</i><sub>1</sub> + <i>P</i><sub>2</sub> + ... + <i>P</i><sub><i>N</i></sub> will not exceed 100. </td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ &quot;8,1,80 16,100,11&quot;, &quot;12,10,100&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: 19.0</pre></td></tr><tr><td><table><tr><td colspan="2">The optimal strategy is as follows: 
+At 08:00, Lecette should not sell the sword even if the first customer comes to the shop. 
+At 12:00, the second customer surely comes. Then, 
+<ul>
+	<li>If the first customer has come at 08:00, she should sell the sword to the second customer. </li>
+	<li>Otherwise, she should not sell the sword to the second customer. She should sell it at 16:00 if possible. </li>
+</ul>
+By this strategy, <i>S</i> will be 10 (80%) or 100 (11%) or 0 (9%). 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ &quot;8,1,80 16,100,11&quot;, &quot;12,10,90 13,30,5&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: 19.4</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ &quot;0,90,25 2,90,25 4,90,25 6,90,25&quot;, &quot;7,100,80&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: 90.0</pre></td></tr><tr><td></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ &quot;0,90,25 2,90,25 4,90,25 6,90,25&quot;, &quot;7,100,95&quot; }</pre></td></tr></table></td></tr><tr><td><pre>Returns: 95.0</pre></td></tr><tr><td></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ &quot;0,3,1 2,4,1 4,5,9 6,2,6 8,5,3 10,5,8 12,9,7 14,9,3&quot;, 
+  &quot;1,2,3 3,8,4 5,6,2 7,6,4 9,3,3 11,8,3 13,2,7 15,9,5&quot; }
+</pre></td></tr></table></td></tr><tr><td><pre>Returns: 3.0692999999999997</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

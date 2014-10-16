@@ -1,0 +1,25 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>Cat and Rabbit are going to play the following game. 
+<br></br>
+<br></br>
+There are some tiles in a row. 
+Each of the tiles is colored white or black. 
+You are given a string <b>tiles</b>, describing the initial arrangement of tiles. 
+The characters '.' and '#' represent a white tile and a black tile, respectively. 
+<br></br>
+<br></br>
+Cat and Rabbit take alternating turns. Cat plays first. 
+In each turn, the following actions must be performed: 
+<ul>
+	<li>First, the player must select a black tile and step on it. </li>
+	<li>Then, the player must make some steps (as many as they want, but at least one). 
+		In each step, the player must select an adjacent white tile, move to that tile, and change its color to black. </li>
+</ul>
+The animal who is unable to take a valid turn loses the game. 
+Return the string "<tt>Cat</tt>" if Cat will win, "<tt>Rabbit</tt>" if Rabbit will win, assuming both animals play optimally. 
+</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>CatAndRabbit</td></tr><tr><td>Method:</td><td>getWinner</td></tr><tr><td>Parameters:</td><td>string</td></tr><tr><td>Returns:</td><td>string</td></tr><tr><td>Method signature:</td><td>string getWinner(string tiles)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>tiles</b> will contain between 1 and 50 characters, inclusive. </td></tr><tr><td align="center" valign="top">-</td><td>Each character in <b>tiles</b> will be '.' or '#'. </td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;#..&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Cat&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">In the first turn, Cat will select the leftmost tile and can move to the right twice. 
+Then Rabbit has no legal move and loses. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;.#.&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Rabbit&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">In the first turn, Cat must select the middle tile. 
+Then, Cat can decide whether to step to the left or to the right.
+In the second turn, Rabbit will select the middle tile and then step in the opposite direction. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;###&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Rabbit&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">Cat has no legal move at the beginning of the game. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;#..##.#&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Cat&quot;</pre></td></tr><tr><td></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;...&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Rabbit&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">5)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;###...####....###...####....&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;Rabbit&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

@@ -1,0 +1,223 @@
+#include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <set>
+#include <map>
+#include <list>
+#include <bitset>
+#include <deque>
+#include <numeric>
+#include <iterator>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cctype>
+#include <cmath>
+#include <climits>
+#include <sys/time.h>
+#include <regex.h>
+
+using namespace std;
+
+#define DEBUG(x) cout << #x << ": " << x << endl
+#define sz(a) int((a).size())
+#define all(x) (x).begin(),(x).end()
+#define foreach(it,c) for(typeof((c).begin()) it=(c).begin();it!=(c).end();++it)
+
+
+class FoxAndIntegers {
+public:
+   vector <int> get( int AminusB, int BminusC, int AplusB, int BplusC ) {
+      vector<int> res;
+      for(int A = -100; A <= 100; ++A) 
+      for(int B = -100; B <= 100; ++B)
+      for(int C = -100; C <= 100; ++C) {
+         if (A - B == AminusB && B - C == BminusC && A + B == AplusB && B + C == BplusC) {
+            res.push_back(A);
+            res.push_back(B);
+            res.push_back(C);
+            return res;
+         }
+      }
+      return res;
+   }
+};
+
+// BEGIN CUT HERE
+namespace moj_harness {
+   int run_test_case(int);
+   void run_test( int casenum = -1 ) {
+      if ( casenum != -1 ) {
+         if ( run_test_case( casenum ) == -1 )
+            cerr << "Illegal input! Test case " << casenum << " does not exist." << endl;
+         return;
+      }
+      
+      int correct = 0, total = 0;
+      for ( int i=0;; ++i ) {
+         int x = run_test_case(i);
+         if ( x == -1 ) {
+            if ( i >= 100 ) break;
+            continue;
+         }
+         correct += x;
+         ++total;
+      }
+      
+      if ( total == 0 ) {
+         cerr << "No test cases run." << endl;
+      } else if ( correct < total ) {
+         cerr << "Some cases FAILED (passed " << correct << " of " << total << ")." << endl;
+      } else {
+         cerr << "All " << total << " tests passed!" << endl;
+      }
+   }
+   
+   template<typename T> ostream& operator<<( ostream &os, const vector<T> &v ) {
+      os << "{";
+      for ( typename vector<T>::const_iterator vi=v.begin(); vi!=v.end(); ++vi ) {
+         if ( vi != v.begin() ) os << ",";
+         os << " " << *vi;
+      }
+      os << " }";
+      return os;
+   }
+
+   long long get_time() {
+#if defined(_SYS_TIME_H_) || defined(_SYS_TIME_H)
+      struct timeval tv;
+      gettimeofday(&tv, NULL);
+      return tv.tv_sec * 1000000LL + tv.tv_usec;
+#else
+      return 0;
+#endif
+   }
+   int verify_case( int casenum, long long starttime, const vector <int> &expected, const vector <int> &received ) {
+      cerr << "Example " << casenum << "... "; 
+      if ( expected == received ) {
+         cerr << "PASSED";
+#if defined(_SYS_TIME_H_) || defined(_SYS_TIME_H)
+         cerr << "  " << (get_time()-starttime)/1000 << "ms";
+#endif
+         cerr << endl;
+         return 1;
+      } else {
+         cerr << "FAILED";
+#if defined(_SYS_TIME_H_) || defined(_SYS_TIME_H)
+         cerr << "  " << (get_time()-starttime)/1000 << "ms";
+#endif
+         cerr << endl;
+         cerr << "    Expected: " << expected << endl; 
+         cerr << "    Received: " << received << endl; 
+         return 0;
+      }
+   }
+
+   int run_test_case( int casenum__ ) {
+      long long starttime__ = get_time();
+      switch( casenum__ ) {
+      case 0: {
+         int AminusB               = 1;
+         int BminusC               = -2;
+         int AplusB                = 3;
+         int BplusC                = 4;
+         int expected__[]          = {2, 1, 3 };
+
+         return verify_case( casenum__, starttime__, vector <int>( expected__, expected__ + ( sizeof expected__ / sizeof(int) ) ), FoxAndIntegers().get( AminusB, BminusC, AplusB, BplusC ) );
+      }
+      case 1: {
+         int AminusB               = 0;
+         int BminusC               = 0;
+         int AplusB                = 5;
+         int BplusC                = 5;
+         int expected__[]          = { };
+
+         return verify_case( casenum__, starttime__, vector <int>( expected__, expected__ + ( sizeof expected__ / sizeof(int) ) ), FoxAndIntegers().get( AminusB, BminusC, AplusB, BplusC ) );
+      }
+      case 2: {
+         int AminusB               = 10;
+         int BminusC               = -23;
+         int AplusB                = -10;
+         int BplusC                = 3;
+         int expected__[]          = {0, -10, 13 };
+
+         return verify_case( casenum__, starttime__, vector <int>( expected__, expected__ + ( sizeof expected__ / sizeof(int) ) ), FoxAndIntegers().get( AminusB, BminusC, AplusB, BplusC ) );
+      }
+      case 3: {
+         int AminusB               = -27;
+         int BminusC               = 14;
+         int AplusB                = 13;
+         int BplusC                = 22;
+         int expected__[]          = { };
+
+         return verify_case( casenum__, starttime__, vector <int>( expected__, expected__ + ( sizeof expected__ / sizeof(int) ) ), FoxAndIntegers().get( AminusB, BminusC, AplusB, BplusC ) );
+      }
+      case 4: {
+         int AminusB               = 30;
+         int BminusC               = 30;
+         int AplusB                = 30;
+         int BplusC                = -30;
+         int expected__[]          = {30, 0, -30 };
+
+         return verify_case( casenum__, starttime__, vector <int>( expected__, expected__ + ( sizeof expected__ / sizeof(int) ) ), FoxAndIntegers().get( AminusB, BminusC, AplusB, BplusC ) );
+      }
+
+      // custom cases
+
+/*
+      case 5: {
+         int AminusB               = ;
+         int BminusC               = ;
+         int AplusB                = ;
+         int BplusC                = ;
+         int expected__[]          = ;
+
+         return verify_case( casenum__, starttime__, vector <int>( expected__, expected__ + ( sizeof expected__ / sizeof(int) ) ), FoxAndIntegers().get( AminusB, BminusC, AplusB, BplusC ) );
+      }
+*/
+/*
+      case 6: {
+         int AminusB               = ;
+         int BminusC               = ;
+         int AplusB                = ;
+         int BplusC                = ;
+         int expected__[]          = ;
+
+         return verify_case( casenum__, starttime__, vector <int>( expected__, expected__ + ( sizeof expected__ / sizeof(int) ) ), FoxAndIntegers().get( AminusB, BminusC, AplusB, BplusC ) );
+      }
+*/
+/*
+      case 7: {
+         int AminusB               = ;
+         int BminusC               = ;
+         int AplusB                = ;
+         int BplusC                = ;
+         int expected__[]          = ;
+
+         return verify_case( casenum__, starttime__, vector <int>( expected__, expected__ + ( sizeof expected__ / sizeof(int) ) ), FoxAndIntegers().get( AminusB, BminusC, AplusB, BplusC ) );
+      }
+*/
+      default:
+         return -1;
+      }
+   }
+}
+
+// END CUT HERE
+
+// BEGIN CUT HERE
+int main(int argc, char *argv[]) {
+   if (argc > 1) {
+      for (int i = 1; i < argc; ++i)
+         moj_harness::run_test(atoi(argv[i]));
+   }
+   else {
+      moj_harness::run_test();
+   }
+   return 0;
+}
+// END CUT HERE

@@ -1,0 +1,69 @@
+/* @BEGIN_OF_SOURCE_CODE */
+/* @JUDGE_ID:  15240  541  C++  "Brute Force" */
+#include<iostream>
+#include<string>
+#include<cctype>
+#include<sstream>
+#include<vector>
+#include<utility>
+
+using namespace std;
+
+class ErrorCorrection {
+
+    public:
+        string getresult(vector< vector<int> >& v, int N) {
+            
+            if ( has_parity(v, N) ) 
+                return "OK";
+
+            for(int i = 0; i < N; ++i) {
+                for(int j = 0; j < N; ++j) {
+                    int t = v[i][j];
+                    v[i][j] = !v[i][j];
+                    if ( has_parity(v, N) )
+                        return "Change bit (" + int_to_string(i+1) + "," + int_to_string(j+1) + ")";
+                    v[i][j] = t;
+                }
+            }
+            return "Corrupt";
+        }
+
+        int has_parity(const vector< vector<int> >& v, int N) {
+            // the matrix allways going to be square matrix.
+            for(int i = 0; i < N; ++i) {
+                int row = 0;
+                int col = 0;
+                for(int j = 0; j < N; ++j) {
+                    row += v[i][j];
+                    col += v[j][i];
+                }
+                if ( (row % 2) != 0 || (col % 2) != 0 )
+                    return false;
+            }
+            return true;
+        }
+
+        string int_to_string(const int& number) {
+            ostringstream oss;
+            oss << number;
+            return oss.str();
+        }
+};
+
+int main() {
+    ErrorCorrection ec;
+    int N = 0;
+    while ( cin >> N ) {
+        vector<vector<int> > v(N, vector<int>(N));
+        for (int i = 0; i < N; ++i) {
+            for(int j = 0; j < N; ++j) {
+                cin >> v[i][j];
+            }
+        }
+        cout << ec.getresult(v, N) << endl;
+    } 
+
+    return 0;
+}
+/* @END_OF_SOURCE_CODE */

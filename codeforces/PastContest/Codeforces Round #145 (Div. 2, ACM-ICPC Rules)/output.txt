@@ -1,0 +1,20 @@
+Group A:
+SanLouis
+Miami
+Toronto
+Mets
+Group B:
+Cleveland
+Arizona
+Washington
+Bat
+Group C:
+Atlanta
+SanFrancisco
+Houston
+BzAcZuVA
+Group D:
+Chicago
+Boston
+California
+BHTXvn

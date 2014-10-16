@@ -1,0 +1,32 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>
+You are a contestant on a TV quiz show.
+Throughout the game, you and your 2 opponents have accumulated points by answering trivia questions.
+At the end of the game, the three of you are given one final question.
+Before you hear the question, each contestant must decide how many points he or she wishes to wager.
+Each contestant who answers the question correctly will gain a number of points equal to his or her wager,
+while the others will lose a number of points equal to their respective wagers.
+The contestant who ends up with the highest score after the final question wins the game.
+</p>
+<p>
+It has come to the point in the game where you must select your wager.
+You can bet any amount between zero and your current score, inclusive.
+Given your current score, the scores of your two opponents, and how much you believe each of your opponents will wager,
+compute how much you should wager in order to have the highest probability of winning the game.  Assume that you and your opponents each independently have a 50% chance of answering the final question correctly.
+</p>
+
+<p>
+You will be given the three scores as a vector &lt;int&gt;, <b>scores</b>.
+The first element is your score,
+the next element is your first opponent's score,
+and the last element is your second opponent's score.
+You will also be given <b>wager1</b> and <b>wager2</b>,
+the amount of your first and second opponents' wagers, respectively.
+</p>
+
+<p>
+Your goal is to maximize your chance of winning uncontested.
+As far as you're concerned, ending in a tie is as bad as losing.
+If there are multiple wagers that give you the same highest probability of winning, return the smallest such wager.
+If you have no chance of winning, return zero.
+</p>
+</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>QuizShow</td></tr><tr><td>Method:</td><td>wager</td></tr><tr><td>Parameters:</td><td>vector &lt;int&gt;, int, int</td></tr><tr><td>Returns:</td><td>int</td></tr><tr><td>Method signature:</td><td>int wager(vector &lt;int&gt; scores, int wager1, int wager2)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>scores</b> will contain exactly 3 elements.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>scores</b> will be between 0 and 10000, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>wager1</b> will be between 0 and <b>scores[1]</b>, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>wager2</b> will be between 0 and <b>scores[2]</b>, inclusive.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ 100, 100, 100 }</pre></td></tr><tr><td><pre>25</pre></td></tr><tr><td><pre>75</pre></td></tr></table></td></tr><tr><td><pre>Returns: 76</pre></td></tr><tr><td><table><tr><td colspan="2">If you bet 76, you have a 50% chance of winning.  In this case, it doesn't matter if your opponents are right or wrong.  If you are right, you win.  Otherwise, you lose.  If you wager less than 76, your chance of winning drops below 50%, and if you wager more, your chance of winning will not increase.  Therefore, the correct answer is 76.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ 10, 50, 60 }</pre></td></tr><tr><td><pre>30</pre></td></tr><tr><td><pre>41</pre></td></tr></table></td></tr><tr><td><pre>Returns: 0</pre></td></tr><tr><td><table><tr><td colspan="2">Even if your opponents are both wrong, they will end up with 20 and 19 points.  Since you cannot win (even if you wager 10), the correct answer is 0.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ 10, 50, 60 }</pre></td></tr><tr><td><pre>31</pre></td></tr><tr><td><pre>41</pre></td></tr></table></td></tr><tr><td><pre>Returns: 10</pre></td></tr><tr><td><table><tr><td colspan="2">This is the same as the previous example, except in this case your opponents will each end up with 19 points if they are both wrong.  Now, you have a 12.5% chance of winning if you wager 10.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ 2, 2, 12 }</pre></td></tr><tr><td><pre>0</pre></td></tr><tr><td><pre>10</pre></td></tr></table></td></tr><tr><td><pre>Returns: 1</pre></td></tr><tr><td></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ 10000, 10000, 10000 }</pre></td></tr><tr><td><pre>9998</pre></td></tr><tr><td><pre>9997</pre></td></tr></table></td></tr><tr><td><pre>Returns: 9999</pre></td></tr><tr><td></td></tr></table></td></tr><tr><td align="center" nowrap="true">5)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{ 5824, 4952, 6230 }</pre></td></tr><tr><td><pre>364</pre></td></tr><tr><td><pre>287</pre></td></tr></table></td></tr><tr><td><pre>Returns: 694</pre></td></tr><tr><td></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

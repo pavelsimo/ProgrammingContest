@@ -1,0 +1,32 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>
+There is a one-dimensional road.
+The road is separated into N consecutive parts.
+The parts are numbered 0 through N-1, in order.
+Ciel is going to walk from part 0 to part N-1.
+</p>
+<p>
+Ciel also noticed that each part of the road has a color: either red, green, or blue.
+Part 0 is red.
+</p>
+<p>
+Ciel is going to perform a sequence of steps.
+Each step must lead in the positive direction.
+That is, if her current part is i, the next step will take her to one of the parts i+1 through N-1, inclusive.
+Her steps can be arbitrarily long.
+However, longer steps are harder: a step of length j costs j*j energy.
+</p>
+<p>
+Additionally, Ciel wants to step on colors in a specific order: red, green, blue, red, green, blue, ...
+That is, she starts on the red part 0, makes a step to a green part, from there to a blue part, and so on, always repeating red, green, and blue in a cycle.
+Note that the final part N-1 also has some color and thus Ciel must reach it in a corresponding step.
+</p>
+<p>
+You are given a string <b>road</b> containing N elements.
+For each i, element i of <b>road</b> is the color of part i: 'R' represents red, 'G' green, and 'B' blue.
+If Ciel can reach part N-1 in the way described above, return the smallest possible total cost of doing so.
+Otherwise, return -1.
+</p>
+</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>ColorfulRoad</td></tr><tr><td>Method:</td><td>getMin</td></tr><tr><td>Parameters:</td><td>string</td></tr><tr><td>Returns:</td><td>int</td></tr><tr><td>Method signature:</td><td>int getMin(string road)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td colspan="2"><h3>Limits</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Time limit (s):</td><td>2.000</td></tr><tr><td>Memory limit (MB):</td><td>64</td></tr></table></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>road</b> will contain between 2 and 15 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each character of <b>road</b> will be either 'R' or 'G' or 'B'.</td></tr><tr><td align="center" valign="top">-</td><td>The first character of <b>road</b> will be 'R'.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;RGGGB&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 8</pre></td></tr><tr><td><table><tr><td colspan="2">The optimum solution is to step part 0 -> part 2 -> part 4.
+The total cost is 2*2 + 2*2 = 8.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;RGBRGBRGB&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 8</pre></td></tr><tr><td><table><tr><td colspan="2">The optimum solution is to make steps of length 1.
+It costs 1*1 = 1 per each step, so the total cost is 8.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;RBBGGGRR&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: -1</pre></td></tr><tr><td><table><tr><td colspan="2">It is impossible to reach the destination.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;RBRRBGGGBBBBR&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 50</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;RG&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 1</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">5)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;RBRGBGBGGBGRGGG&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 52</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

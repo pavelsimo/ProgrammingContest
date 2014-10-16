@@ -1,0 +1,221 @@
+#include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <set>
+#include <map>
+#include <list>
+#include <bitset>
+#include <deque>
+#include <numeric>
+#include <iterator>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cctype>
+#include <cmath>
+#include <climits>
+#include <sys/time.h>
+#include <regex.h>
+ 
+using namespace std;
+ 
+#define DEBUG(x) cout << #x << ": " << x << endl
+#define sz(a) int((a).size())
+#define all(x) (x).begin(),(x).end()
+#define foreach(it,c) for(typeof((c).begin()) it=(c).begin();it!=(c).end();++it)
+ 
+int lucky[5000];
+ 
+class TheLuckyGameDivTwo {
+public:
+
+   bool islucky(int n) {
+      int x = n;
+      while(x>0) {
+         int d = x%10;
+         if(d!=4 && d!=7) 
+            return false;
+         x/=10;
+      }
+      return true;
+   }
+
+   int find( int a, int b, int jLen, int bLen ) {
+      memset(lucky,0,sizeof(lucky));
+      for(int i = 1; i < 5000; ++i) {
+         lucky[i] = lucky[i-1];
+         if(islucky(i)) 
+            lucky[i]++;
+      }
+      int res = 0;
+      for(int i = 0; a+i+jLen-1 <= b; ++i) {
+         int L = a+i;
+         int H = a+i+jLen-1;
+         int sjohn = lucky[H]-lucky[L-1];
+         int cur = sjohn;
+         for(int j = 0; L+j+bLen-1 <= H; ++j) {
+            int BL = L+j;
+            int BH = L+j+bLen-1;
+            int sbrus = lucky[BH]-lucky[BL-1];
+            cur = min(cur,sbrus);
+         }            
+         res = max(res,cur);
+      }
+      return res;
+   }
+};
+
+// BEGIN CUT HERE
+namespace moj_harness {
+   int run_test_case(int);
+   void run_test( int casenum = -1 ) {
+      if ( casenum != -1 ) {
+         if ( run_test_case( casenum ) == -1 )
+            cerr << "Illegal input! Test case " << casenum << " does not exist." << endl;
+         return;
+      }
+      
+      int correct = 0, total = 0;
+      for ( int i=0;; ++i ) {
+         int x = run_test_case(i);
+         if ( x == -1 ) {
+            if ( i >= 100 ) break;
+            continue;
+         }
+         correct += x;
+         ++total;
+      }
+      
+      if ( total == 0 ) {
+         cerr << "No test cases run." << endl;
+      } else if ( correct < total ) {
+         cerr << "Some cases FAILED (passed " << correct << " of " << total << ")." << endl;
+      } else {
+         cerr << "All " << total << " tests passed!" << endl;
+      }
+   }
+   
+   long long get_time() {
+#if defined(_SYS_TIME_H_) || defined(_SYS_TIME_H)
+      struct timeval tv;
+      gettimeofday(&tv, NULL);
+      return tv.tv_sec * 1000000LL + tv.tv_usec;
+#else
+      return 0;
+#endif
+   }
+   int verify_case( int casenum, long long starttime, const int &expected, const int &received ) {
+      cerr << "Example " << casenum << "... "; 
+      if ( expected == received ) {
+         cerr << "PASSED";
+#if defined(_SYS_TIME_H_) || defined(_SYS_TIME_H)
+         cerr << "  " << (get_time()-starttime)/1000 << "ms";
+#endif
+         cerr << endl;
+         return 1;
+      } else {
+         cerr << "FAILED";
+#if defined(_SYS_TIME_H_) || defined(_SYS_TIME_H)
+         cerr << "  " << (get_time()-starttime)/1000 << "ms";
+#endif
+         cerr << endl;
+         cerr << "    Expected: " << expected << endl; 
+         cerr << "    Received: " << received << endl; 
+         return 0;
+      }
+   }
+
+   int run_test_case( int casenum__ ) {
+      long long starttime__ = get_time();
+      switch( casenum__ ) {
+      case 0: {
+         int a                     = 1;
+         int b                     = 10;
+         int jLen                  = 2;
+         int bLen                  = 1;
+         int expected__            = 0;
+
+         return verify_case( casenum__, starttime__, expected__, TheLuckyGameDivTwo().find( a, b, jLen, bLen ) );
+      }
+      case 1: {
+         int a                     = 1;
+         int b                     = 100;
+         int jLen                  = 100;
+         int bLen                  = 100;
+         int expected__            = 6;
+
+         return verify_case( casenum__, starttime__, expected__, TheLuckyGameDivTwo().find( a, b, jLen, bLen ) );
+      }
+      case 2: {
+         int a                     = 4;
+         int b                     = 8;
+         int jLen                  = 3;
+         int bLen                  = 2;
+         int expected__            = 1;
+
+         return verify_case( casenum__, starttime__, expected__, TheLuckyGameDivTwo().find( a, b, jLen, bLen ) );
+      }
+      case 3: {
+         int a                     = 1;
+         int b                     = 100;
+         int jLen                  = 75;
+         int bLen                  = 50;
+         int expected__            = 2;
+
+         return verify_case( casenum__, starttime__, expected__, TheLuckyGameDivTwo().find( a, b, jLen, bLen ) );
+      }
+
+      // custom cases
+
+      case 4: {
+         int a                     = 160;
+         int b                     = 2650;
+         int jLen                  = 1563;
+         int bLen                  = 1480;
+         int expected__            = 8;
+
+         return verify_case( casenum__, starttime__, expected__, TheLuckyGameDivTwo().find( a, b, jLen, bLen ) );
+      }
+
+      case 5: {
+         int a                     = 3373;
+         int b                     = 4742;
+         int jLen                  = 461;
+         int bLen                  = 336;
+         int expected__            = 4;
+
+         return verify_case( casenum__, starttime__, expected__, TheLuckyGameDivTwo().find( a, b, jLen, bLen ) );
+      }
+      case 6: {
+         int a                     = 777;
+         int b                     = 4444;
+         int jLen                  = 3667;
+         int bLen                  = 3666;
+         int expected__            = 0;
+         return verify_case( casenum__, starttime__, expected__, TheLuckyGameDivTwo().find( a, b, jLen, bLen ) );
+      }
+
+      default:
+         return -1;
+      }
+   }
+}
+
+// END CUT HERE
+
+// BEGIN CUT HERE
+int main(int argc, char *argv[]) {
+   if (argc > 1) {
+      for (int i = 1; i < argc; ++i)
+         moj_harness::run_test(atoi(argv[i]));
+   }
+   else {
+      moj_harness::run_test();
+   }
+   return 0;
+}
+// END CUT HERE

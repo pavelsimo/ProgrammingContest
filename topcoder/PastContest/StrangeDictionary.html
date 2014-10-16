@@ -1,0 +1,27 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>A standard way of ordering words in a dictionary involves comparison of two words character by character, from left to right, until some two characters disagree. Jim thinks it's pretty boring, so he introduced a more complicated and less predictable scheme.</p>
+<p></p>
+<p>Given is a vector &lt;string&gt; <b>words</b> that contains N distinct words and each element is a single word. The length of each word is the same -- exactly L characters. To order words according to his scheme, Jim first generates a random permutation p[0], p[1], ..., p[L-1] of integers between 0 and L-1, inclusive. This permutation is generated only once and then considered to be fixed for the rest of the procedure. Using the permutation p, Jim can compare any two words as follows:</p>
+<p></p>
+<pre>
+// returns -1, if A&lt;B, 0, if A=B, and 1, if A&gt;B
+function Compare(Word A, Word B):
+	for i = 0, 1, ..., L-1:
+		a := character at position p[i] (0-based) in A
+		b := character at position p[i] (0-based) in B
+		if (a &lt; b), return -1
+		if (b &lt; a), return 1
+
+	return 0
+</pre>
+<p></p>
+<p>Let <i>Sorted</i> be the list of the given <b>words</b> ordered according to Compare operator defined above. In other words, Compare(<i>Sorted</i>[i], <i>Sorted</i>[j]) = -1, for any i, j, 0 &lt;= i &lt; j &lt; N. Let <i>pos</i>[i] be the 0-based position of <b>words</b>[i] within <i>Sorted</i>.</p>
+<p></p>
+<p>Obviously, the value <i>pos</i>[i] depends on the choice of the random permutation p. Assume that p is chosen uniformly at random. Return a vector &lt;double&gt; that contains N elements. Element i of the return value must be the expected value of <i>pos</i>[i].</p></td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>StrangeDictionary</td></tr><tr><td>Method:</td><td>getExpectedPositions</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>vector &lt;double&gt;</td></tr><tr><td>Method signature:</td><td>vector &lt;double&gt; getExpectedPositions(vector &lt;string&gt; words)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Notes</h3></td></tr><tr><td align="center" valign="top">-</td><td>Each element of the return value must have an absolute or relative error of less than 1e-9.</td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>words</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>words</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>All elements of <b>words</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top">-</td><td>Each character in each element of <b>words</b> will be a lowercase letter ('a'-'z').</td></tr><tr><td align="center" valign="top">-</td><td>All elements of <b>words</b> will be distinct.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;hardesttestever&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: {0.0 }</pre></td></tr><tr><td><table><tr><td colspan="2">One word will always be at position 0 regardless of the permutation p.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;ab&quot;, &quot;ba&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: {0.5, 0.5 }</pre></td></tr><tr><td><table><tr><td colspan="2">If p = {0, 1}, then "ab" &lt; "ba". If p = {1, 0}, then "ba" &lt; "ab".</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;aza&quot;, &quot;aab&quot;, &quot;bba&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: {1.0, 0.8333333333333333, 1.1666666666666665 }</pre></td></tr><tr><td><table><tr><td colspan="2"><pre>
+p		<i>Sorted</i>
+{0,1,2}		aab, aza, bba
+{0,2,1}		aza, aab, bba
+{1,0,2}		aab, bba, aza
+{1,2,0}		aab, bba, aza
+{2,0,1}		aza, bba, aab
+{2,1,0}		bba, aza, aab
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;abababab&quot;, &quot;babababa&quot;, &quot;acacacac&quot;, &quot;cacacaca&quot;, &quot;bcbcbcbc&quot;, &quot;cbcbcbcb&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: {1.0, 1.0, 2.5, 2.5, 4.0, 4.0 }</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

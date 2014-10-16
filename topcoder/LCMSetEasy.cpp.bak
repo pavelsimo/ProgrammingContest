@@ -1,0 +1,85 @@
+#include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <set>
+#include <map>
+#include <list>
+#include <bitset>
+#include <deque>
+#include <numeric>
+#include <iterator>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cctype>
+#include <cmath>
+#include <climits>
+#include <sys/time.h>
+#include <regex.h>
+
+using namespace std;
+
+#define DEBUG(x) cout << #x << ": " << x << endl
+
+#define SZ(a) int((a).size())
+#define REP(i,n) for(int i=0,_n=(n);i<_n;++i)
+#define FOR(i,a,b) for(int i=(a),_b=(b);i<=_b;++i)
+#define FOREACH(it,c) for(__typeof__((c).begin()) it=(c).begin();it!=(c).end();++it)
+
+typedef long long llong;
+
+
+class LCMSetEasy {
+public:
+
+  int N;
+  llong X;
+  vector <int> A;
+  map<pair<int,llong>,bool> memo;
+
+  llong gcd(llong a, llong b) {
+    if (a < 0) a = -a;
+    if (b < 0) b = -b;
+    if (a < b) swap(a, b);
+    while (b > 0) {
+      llong t = b;
+      b = a % b;
+      a = t;
+    }
+    
+    return a > 0 ? a : 1;
+   }
+    
+   llong lcm(llong a, llong b) {
+      return a / gcd(a,b) * b;
+   }
+
+   int go(llong i, llong cur_lcm) {
+     if(cur_lcm == X) return true;
+     if(memo.count(make_pair(i, cur_lcm)) != 0) {
+       return memo[make_pair(i, cur_lcm)];
+     }
+     if(i == N) return false;
+     bool v1 = go(i + 1, lcm(cur_lcm, A[i]));
+     bool v2 = go(i + 1, cur_lcm);
+     return memo[make_pair(i, cur_lcm)] = v1 || v2;
+   }
+
+   string include( vector <int> S, int x ) {
+      memo.clear();
+      X = x; N = SZ(S); A = S;
+      bool ans = go(0, 1);
+      return ans ? "Possible" : "Impossible";
+   }
+};
+
+
+
+
+// Powered by FileEdit
+// Powered by moj 4 beta 2 [modified TZTester]
+// Powered by CodeProcessor

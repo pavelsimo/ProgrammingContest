@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="PastContest/TCHS SRM 1/|PastContest/SRM 152/|PastContest/SRM 223/|PastContest/SRM 498/|PastContest/SRM 151/" kind="src" path=""/>
+	<classpathentry kind="src" path="PastContest/SRM 151"/>
+	<classpathentry kind="src" path="PastContest/SRM 152"/>
+	<classpathentry kind="src" path="PastContest/SRM 223"/>
+	<classpathentry kind="src" path="PastContest/SRM 498"/>
+	<classpathentry kind="src" path="PastContest/TCHS SRM 1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

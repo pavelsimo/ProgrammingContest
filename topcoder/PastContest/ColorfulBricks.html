@@ -1,0 +1,17 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>Beaver Bindu has some colored bricks.
+Each color is described by an uppercase letter.
+Bricks of each color all look exactly the same.
+You are given a string <b>bricks</b>.
+Each character of <b>bricks</b> represents the color of one of Bindu's bricks.
+
+<br></br><br></br>
+
+Bindu wants to arrange all her bricks into a row.
+A row of bricks is nice if there is at most one pair of adjacent bricks which have different colors.
+<br></br><br></br>
+
+Return the number of ways in which Bindu can form a nice row, using all her bricks.
+(Two ways are considered identical if they correspond to the same sequence of brick colors.)
+<br></br><br></br>
+
+</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>ColorfulBricks</td></tr><tr><td>Method:</td><td>countLayouts</td></tr><tr><td>Parameters:</td><td>string</td></tr><tr><td>Returns:</td><td>int</td></tr><tr><td>Method signature:</td><td>int countLayouts(string bricks)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>bricks</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each character of <b>bricks</b> will be an uppercase letter ('A'-'Z').</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;ABAB&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 2</pre></td></tr><tr><td><table><tr><td colspan="2">There are six possible ways to arrange all the bricks into a row: "AABB", "ABAB", "ABBA", "BAAB", "BABA" and "BBAA". Out of these, only "AABB" and "BBAA" have at most one pair of adjacent bricks with different colors.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;AAA&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 1</pre></td></tr><tr><td><table><tr><td colspan="2">In this test case, all bricks have the same color. Hence, there is only one way to arrange them into a row. That row is nice, because it has no adjacent bricks of different colors.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;WXYZ&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 0</pre></td></tr><tr><td><table><tr><td colspan="2">Since all four bricks are of different colors, the bricks at positions 0 and 1 will have different colors. Similarly, the bricks at positions 1 and 2 will also have different colors. Hence, no matter how the bricks are arranged in a row, the row will not be nice.</td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

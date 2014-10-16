@@ -1,0 +1,39 @@
+
+void prim() {
+    set<int> vertex;
+    priority_queue<Edge> Q;
+    Q.push(Edge(1,1,0));
+    while ( !Q.empty() ) {
+        Edge s = Q.top();
+        Q.pop();
+        if ( present(vertex,s.i) ) continue; // already in the tree
+        vertex.insert(s.i);
+        mst[s.i][s.j] = mst[s.j][s.i] = s.w;
+        int i = s.i;
+        int j;
+        while ((j=getAdj(i)) != -1 ) {
+            visited[i][j] = 1;
+            Q.push(Edge(j,i,D[j][i]));
+        }
+    }
+}
+*/
+/*
+
+int getAdj(int i) {
+    for(int j = 0; j < N; ++j)
+        if ( visited[i][j] == 0 && D[i][j] != -1 )
+            return j;
+    return -1;
+}
+
+        // DEBUG
+        /*
+        for(int i = 0; i < 10; ++i) {
+            for(int j = 0; j < 10; ++j) {
+                printf("%01d  ", mst[i][j]);
+            }
+            cout << endl;
+        }
+        */
+

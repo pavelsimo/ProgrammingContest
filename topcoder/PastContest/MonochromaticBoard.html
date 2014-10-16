@@ -1,0 +1,29 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>There is a HxW rectangular board divided into 1x1 cells. Initially each cell is colored White. Fox Ciel wants to change the color of certain cells on the board. You are given a vector &lt;string&gt; <b>board</b> consisting of characters 'B' and 'W'. If the j-th character of the i-th element of <b>board</b> is 'B', she must change the color of cell (i, j) to Black, otherwise this cell must remain White.
+<br></br>
+<br></br>
+Fox Ciel can perform the following operation:
+<br></br>
+<br></br>
+1. Choose one row or one column.
+<br></br>
+2. Paint the row or the column she chose in step 1 with Black. The color of all cells in the row or the column becomes Black.
+<br></br>
+<br></br>
+Return the minimal number of operations required to change the color to <b>board</b>. The constraints will guarantee that it's always possible.</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>MonochromaticBoard</td></tr><tr><td>Method:</td><td>theMin</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>int</td></tr><tr><td>Method signature:</td><td>int theMin(vector &lt;string&gt; board)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>board</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>board</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>board</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each character in <b>board</b> will be 'W' or 'B'.</td></tr><tr><td align="center" valign="top">-</td><td><b>board</b> can be obtained by performing the operation described in the statement 0 or more times.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;WBWBW&quot;,
+ &quot;BBBBB&quot;,
+ &quot;WBWBW&quot;,
+ &quot;WBWBW&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 3</pre></td></tr><tr><td><table><tr><td colspan="2">Paint&nbsp;row&nbsp;1&nbsp;(0-indexed),&nbsp;column&nbsp;1&nbsp;and&nbsp;column&nbsp;3.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;BBBB&quot;,
+ &quot;BBBB&quot;,
+ &quot;BBBB&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 3</pre></td></tr><tr><td><table><tr><td colspan="2">Paint&nbsp;all&nbsp;rows.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;BBBBB&quot;,
+ &quot;BBBBB&quot;,
+ &quot;BBBBB&quot;,
+ &quot;BBBBB&quot;,
+ &quot;BBBBB&quot;,
+ &quot;BBBBB&quot;,
+ &quot;BBBBB&quot;,
+ &quot;BBBBB&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 5</pre></td></tr><tr><td><table><tr><td colspan="2">Paint&nbsp;all&nbsp;columns.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;WW&quot;,
+ &quot;WW&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 0</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;BBBBBBBB&quot;,
+ &quot;BBBBBBBB&quot;,
+ &quot;BBBBBBBB&quot;,
+ &quot;WBWBBBWB&quot;,
+ &quot;BBBBBBBB&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 9</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

@@ -1,0 +1,40 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>Algrid is a program that uses a single grid with cells colored white or black as input and returns a new one as output. The grid has H rows and W columns. The topmost row is row 0, the bottommost row is row H-1, the leftmost column is column 0 and the rightmost column is column W-1. The cell at row i, column j can be denoted as (i,j). The program works by evaluating pairs of contiguous cells and making decisions depending on their contents. The following pseudo-code describes how the program works:<br></br>
+<br></br>
+<pre>
+For i = 0 to H-2:
+    For j = 0 to W-2:
+        //Get the current colors of cells (i,j) and (i,j+1)
+        A = Color(i,j) , B = Color(i,j+1)
+
+        If (A,B) == (White, White) Then:
+             Do nothing.
+        EndIf
+        If (A,B) == (Black, White) Then: 
+             Repaint cells (i+1,j) and (i+1,j+1) Black.
+        EndIf
+        If (A,B) == (White, Black) Then:
+             Repaint cells (i+1,j) and (i+1,j+1) White.
+        EndIf
+        if (A,B) == (Black, Black) Then:
+             Swap the colors in cells (i+1,j) and (i+1,j+1).
+        EndIf
+    EndFor
+EndFor
+</pre><br></br>
+<br></br>
+You will be given a possible output for the program as a vector &lt;string&gt; <b>output</b>. The j-th character in the i-th element of <b>output</b> represents the color of cell (i,j) where 'W' represents white and 'B' represents black. Find an input grid that would yield <b>output</b> as a result. If there is more than one possible result, find the lexicographically smallest one. Return the found grid as a vector &lt;string&gt; following the same format as the input. If there are no grids that would generate the wanted <b>output</b>, return an empty vector &lt;string&gt; instead.</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>Algrid</td></tr><tr><td>Method:</td><td>makeProgram</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>vector &lt;string&gt;</td></tr><tr><td>Method signature:</td><td>vector &lt;string&gt; makeProgram(vector &lt;string&gt; output)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Notes</h3></td></tr><tr><td align="center" valign="top">-</td><td>To compare two vector &lt;string&gt;s A and B, find the smallest index i such that A[i] and B[i] differ. If A[i] is lexicographically smaller than B[i], we say that A is lexicographically smaller than B, and vice versa.</td></tr><tr><td align="center" valign="top">-</td><td>To compare two strings C and D, find the smallest index i such that the characters C[i] and D[i] differ. If C[i] is smaller in ASCII ordering than D[i], we say that C is lexicographically smaller than D, and vice versa.</td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>output</b> will contain between 2 and 16 elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>output</b> will contain between 2 and 16 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>All elements of <b>output</b> will have the same length.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>output</b> will only contain 'W' or 'B' characters.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;WWWWWWW&quot;,
+ &quot;WWWWWWB&quot;,
+ &quot;BBBBBWW&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;WWWWWWW&quot;, &quot;WWWWWWB&quot;, &quot;BBBBBBB&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2">The following is another input grid that would yield the same output but is not the wanted result as it is not the lexicographically smallest:
+<pre>
+WWWWWWW
+WWWWWWB
+BBBBBWB
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;BBBBB&quot;,
+ &quot;WBWBW&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;BBBBB&quot;, &quot;WWBWB&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;BBBB&quot;,
+ &quot;BBBB&quot;,
+ &quot;BBWB&quot;,
+ &quot;WWBB&quot;,
+ &quot;BWBB&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: { }</pre></td></tr><tr><td><table><tr><td colspan="2">There is no possible input that would generate this output.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;WWBBBBW&quot;,
+ &quot;BWBBWBB&quot;,
+ &quot;BWBBWBW&quot;,
+ &quot;BWWBWBB&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: {&quot;WWBBBBW&quot;, &quot;BBBBBWB&quot;, &quot;BBBBBBB&quot;, &quot;BBBWBBB&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

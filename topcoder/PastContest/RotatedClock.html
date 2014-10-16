@@ -1,0 +1,21 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>Lecette has a clock with an hour hand and a minute hand. 
+The hour hand makes a full rotation in 12 hours, and the minute hand makes a full rotation in one hour. 
+Both hands move smoothly, at constant speeds. 
+The clock has a scale marked in 30 degree increments, and both hands point to the same mark at 00:00. 
+<br></br><br></br>
+Lecette wants to know what time it is, but the clock is rotated, so she can't tell where the top of the clock is. 
+She measured the angles of hands from a certain mark, clockwise: 
+<b>hourHand</b> and <b>minuteHand</b> (both in degrees). 
+Return the earliest possible time that is consistent with these measurements. 
+Format the return value as a string of the form "HH:MM" (quotes for clarity). 
+Lecette might have measured the angles incorrectly. 
+If there is no corresponding time, return an empty string instead. 
+</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>RotatedClock</td></tr><tr><td>Method:</td><td>getEarliest</td></tr><tr><td>Parameters:</td><td>int, int</td></tr><tr><td>Returns:</td><td>string</td></tr><tr><td>Method signature:</td><td>string getEarliest(int hourHand, int minuteHand)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>hourHand</b> and <b>minuteHand</b> will each be between 0 and 359, inclusive. </td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>70</pre></td></tr><tr><td><pre>300</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;08:20&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">This is how the clock were positioned when Lecette made her measurements: 
+<br></br>
+<img src="http://www.topcoder.com/contest/problem/RotatedClock/RotatedClockSample0a.png"></img>
+<br></br>
+In order to show a valid time, the clock needs to be turned upside down: 
+<br></br>
+<img src="http://www.topcoder.com/contest/problem/RotatedClock/RotatedClockSample0b.png"></img>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>90</pre></td></tr><tr><td><pre>120</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;11:00&quot;</pre></td></tr><tr><td></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>240</pre></td></tr><tr><td><pre>36</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;&quot;</pre></td></tr><tr><td></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>19</pre></td></tr><tr><td><pre>19</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;&quot;</pre></td></tr><tr><td></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>1</pre></td></tr><tr><td><pre>12</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;00:02&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">The time when the coding phase started. 
+</td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

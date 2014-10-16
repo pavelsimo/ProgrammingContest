@@ -1,0 +1,30 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>You are given a 2-dimensional matrix of characters represented by the vector &lt;string&gt; <b>letterMaze</b>. The i-th character of the j-th element of <b>letterMaze</b>  represents the character at row i and column j. Each of the 26 letters from 'A' to 'Z' appears exactly once in <b>letterMaze</b>, the remaining characters are periods ('.').<br></br>
+<br></br>
+An alphabet path is a sequence of 26 elements of the matrix such that:
+<ul>
+<li>The first element contains the letter 'A'.</li>
+<li>The first element and the second element are (horizontally or vertically) adjacent.</li>
+<li>The second element contains the letter 'B'.</li>
+<li>The second element and the third element are (horizontally or vertically) adjacent.</li>
+<li>...</li>
+<li>The 25-th element and the 26-th element are (horizontally or vertically) adjacent.</li>
+<li>The last, 26-th element contains the letter 'Z'.</li>
+</ul><br></br>
+Given <b>letterMaze</b> return string "YES" if the alphabet path exists in the matrix and "NO" otherwise.</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>AlphabetPath</td></tr><tr><td>Method:</td><td>doesItExist</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>string</td></tr><tr><td>Method signature:</td><td>string doesItExist(vector &lt;string&gt; letterMaze)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Notes</h3></td></tr><tr><td align="center" valign="top">-</td><td>Formally, elements (x1,y1) and (x2,y2) are horizontally or vertically adjacent if and only if abs(x1 - x2) + abs(x2 - y2) = 1. </td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>letterMaze</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>letterMaze</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>All the elements of <b>letterMaze</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>letterMaze</b> will only contain uppercase letters ('A'-'Z') and periods ('.').</td></tr><tr><td align="center" valign="top">-</td><td>Each uppercase letter from 'A' to 'Z' will appear exactly once in <b>letterMaze</b>.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;YES&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">Simply go from left to right.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;ADEHI..Z&quot;,
+ &quot;BCFGJK.Y&quot;,
+ &quot;.PONML.X&quot;,
+ &quot;.QRSTUVW&quot;}
+</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;YES&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;ACBDEFGHIJKLMNOPQRSTUVWXYZ&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;NO&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;ABC.......&quot;,
+ &quot;...DEFGHIJ&quot;,
+ &quot;TSRQPONMLK&quot;,
+ &quot;UVWXYZ....&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;NO&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">The cells marked with C and D are not adjacent, it is impossible to make an alphabet path in this case.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;..............&quot;,
+ &quot;..............&quot;,
+ &quot;..............&quot;,
+ &quot;...DEFGHIJK...&quot;,
+ &quot;...C......L...&quot;,
+ &quot;...B......M...&quot;,
+ &quot;...A......N...&quot;,
+ &quot;..........O...&quot;,
+ &quot;..ZY..TSRQP...&quot;,
+ &quot;...XWVU.......&quot;,
+ &quot;..............&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;YES&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

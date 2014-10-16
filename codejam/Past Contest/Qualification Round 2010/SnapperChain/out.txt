@@ -1,0 +1,7 @@
+Case #1: OFF
+Case #2: OFF
+Case #3: OFF
+Case #4: ON
+Case #5: OFF
+Case #6: OFF
+Case #7: ON

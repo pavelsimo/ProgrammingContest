@@ -1,0 +1,26 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>You have been given a &quot;word search&quot; puzzle, which consists of a rectangular grid of letters, in which several words are hidden.  Each word may begin anywhere in the puzzle, and may be oriented in any straight line horizontally, vertically, or diagonally.  However, the words must all go down, right, or down-right.  (see examples)</p>
+
+<p>You are given a vector &lt;string&gt;, <b>grid</b>, indicating the letters in the grid to be searched.  Character <i>j</i> of element <i>i</i> of <b>grid</b> is the letter at row <i>i</i>, column <i>j</i>.  You are also given a vector &lt;string&gt;, <b>wordList</b>, indicating the words to be found in the grid.  You are to return a vector &lt;string&gt; indicating the locations of each word within the grid.</p>
+
+<p>The return value should have the same number of elements as <b>wordList</b>.  Each element of <b>wordList</b> corresponds to the element of the return value with the same index.</p>
+
+<p>Each element of the return value should be formatted as &quot;<i>row</i> <i>col</i>&quot; (quotes added for clarity), where <i>row</i> is the 0-based row in which the first letter of the word is found, and <i>col</i> is the 0-based column in which the first letter of the word is found.  If the same word can be found more than once, the location in the lowest-indexed row should be returned.  If there is still a tie, return the location with the lowest-indexed column.  If a word cannot be found in the grid, return an empty string for that element.</p>
+
+</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>WordFind</td></tr><tr><td>Method:</td><td>findWords</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;, vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>vector &lt;string&gt;</td></tr><tr><td>Method signature:</td><td>vector &lt;string&gt; findWords(vector &lt;string&gt; grid, vector &lt;string&gt; wordList)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>grid</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>grid</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>grid</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top">-</td><td>Each character of each element of <b>grid</b> will be 'A'-'Z'.</td></tr><tr><td align="center" valign="top">-</td><td><b>wordList</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>wordList</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each character of each element of <b>wordList</b> will be 'A'-'Z'.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;TEST&quot;,
+ &quot;GOAT&quot;,
+ &quot;BOAT&quot;}</pre></td></tr><tr><td><pre>{&quot;GOAT&quot;, &quot;BOAT&quot;, &quot;TEST&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: { &quot;1 0&quot;,
+  &quot;2 0&quot;,
+  &quot;0 0&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2">These words are pretty easy to find.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;SXXX&quot;,
+ &quot;XQXM&quot;,
+ &quot;XXLA&quot;,
+ &quot;XXXR&quot;}</pre></td></tr><tr><td><pre>{&quot;SQL&quot;, &quot;RAM&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: { &quot;0 0&quot;,
+  &quot;&quot; }</pre></td></tr><tr><td><table><tr><td colspan="2">While &quot;RAM&quot; may be found going up at &quot;3 3&quot;, we are only allowing words that go down and right.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;EASYTOFINDEAGSRVHOTCJYG&quot;,
+ &quot;FLVENKDHCESOXXXXFAGJKEO&quot;,
+ &quot;YHEDYNAIRQGIZECGXQLKDBI&quot;,
+ &quot;DEIJFKABAQSIHSNDLOMYJIN&quot;,
+ &quot;CKXINIMMNGRNSNRGIWQLWOG&quot;,
+ &quot;VOFQDROQGCWDKOUYRAFUCDO&quot;,
+ &quot;PFLXWTYKOITSURQJGEGSPGG&quot;}</pre></td></tr><tr><td><pre>{&quot;EASYTOFIND&quot;, &quot;DIAG&quot;, &quot;GOING&quot;, &quot;THISISTOOLONGTOFITINTHISPUZZLE&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: { &quot;0 0&quot;,
+  &quot;1 6&quot;,
+  &quot;0 22&quot;,
+  &quot;&quot; }</pre></td></tr><tr><td></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

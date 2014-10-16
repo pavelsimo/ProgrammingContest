@@ -1,0 +1,43 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>Fox Jiro came to a flower shop to buy flowers.
+The flowers in the shop are arranged in some cells of a rectangular grid.
+The layout of the grid is given as a vector &lt;string&gt; <b>flowers</b>.
+If the j-th cell of the i-th row of the grid contains a flower, then the j-th character of the i-th element of <b>flowers</b> will be 'F'.
+(All indices in the previous sentence are 0-based.)
+If the particular cell is empty, the corresponding character will be '.' (a period).</p>
+<br></br>
+<p>In order to buy flowers, Jiro has to draw a rectangle on this grid and buy all the flowers which lie inside the rectangle.
+Of course, the sides of the rectangle must be on cell boundaries.
+(Therefore, the sides of the rectangle will necessarily be parallel to the coordinate axes.)</p>
+<br></br>
+<p>Jiro wants to buy as many flowers as possible.
+Unfortunately, he cannot select the entire grid.
+Eel Saburo came to this shop before Jiro.
+Saburo has already drawn his rectangle.
+Saburo's rectangle contains just a single cell: the <b>c</b>-th cell of the <b>r</b>-th row of the grid.
+(Again, both indices are 0-based.)
+Jiro's rectangle may not contain this cell.</p>
+<br></br>
+<p>You are given the vector &lt;string&gt; <b>flowers</b> and the ints <b>r</b> and <b>c</b>.
+Return the maximum possible number of flowers Jiro can buy in this situation.</p></td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>FoxAndFlowerShopDivTwo</td></tr><tr><td>Method:</td><td>theMaxFlowers</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;, int, int</td></tr><tr><td>Returns:</td><td>int</td></tr><tr><td>Method signature:</td><td>int theMaxFlowers(vector &lt;string&gt; flowers, int r, int c)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>flowers</b> will contain R elements.</td></tr><tr><td align="center" valign="top">-</td><td>R will be between 2 and 10, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each element of <b>flowers</b> will contain C characters.</td></tr><tr><td align="center" valign="top">-</td><td>C will be between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each character in <b>flowers</b> will be either 'F' or '.'.</td></tr><tr><td align="center" valign="top">-</td><td><b>r</b> will be between 0 and R - 1, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>c</b> will be between 0 and C - 1, inclusive.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;F.F&quot;,
+ &quot;.F.&quot;,
+ &quot;.F.&quot;}</pre></td></tr><tr><td><pre>1</pre></td></tr><tr><td><pre>1</pre></td></tr></table></td></tr><tr><td><pre>Returns: 2</pre></td></tr><tr><td><table><tr><td colspan="2">The forbidden cell is the one in the middle. Jiro can buy two flowers by drawing a rectangle that contains the entire first row.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;F..&quot;,
+ &quot;...&quot;,
+ &quot;...&quot;}</pre></td></tr><tr><td><pre>0</pre></td></tr><tr><td><pre>0</pre></td></tr></table></td></tr><tr><td><pre>Returns: 0</pre></td></tr><tr><td><table><tr><td colspan="2">There are no flowers Jiro can buy.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.FF.F.F&quot;,
+ &quot;FF...F.&quot;,
+ &quot;..FF.FF&quot;}</pre></td></tr><tr><td><pre>1</pre></td></tr><tr><td><pre>2</pre></td></tr></table></td></tr><tr><td><pre>Returns: 6</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;F&quot;,
+ &quot;.&quot;,
+ &quot;F&quot;,
+ &quot;F&quot;,
+ &quot;F&quot;,
+ &quot;.&quot;,
+ &quot;F&quot;,
+ &quot;F&quot;}</pre></td></tr><tr><td><pre>4</pre></td></tr><tr><td><pre>0</pre></td></tr></table></td></tr><tr><td><pre>Returns: 3</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.FFF..F...&quot;,
+ &quot;FFF...FF.F&quot;,
+ &quot;..F.F.F.FF&quot;,
+ &quot;FF..F.FFF.&quot;,
+ &quot;..FFFFF...&quot;,
+ &quot;F....FF...&quot;,
+ &quot;.FF.FF..FF&quot;,
+ &quot;..F.F.FFF.&quot;,
+ &quot;.FF..F.F.F&quot;,
+ &quot;F.FFF.FF.F&quot;}</pre></td></tr><tr><td><pre>4</pre></td></tr><tr><td><pre>3</pre></td></tr></table></td></tr><tr><td><pre>Returns: 32</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

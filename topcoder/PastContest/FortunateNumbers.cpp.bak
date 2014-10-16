@@ -1,0 +1,71 @@
+#include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <set>
+#include <map>
+#include <list>
+#include <bitset>
+#include <deque>
+#include <numeric>
+#include <iterator>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cctype>
+#include <cmath>
+#include <climits>
+#include <sys/time.h>
+#include <regex.h>
+
+using namespace std;
+
+#define DEBUG(x) cout << #x << ": " << x << endl
+#define sz(a) int((a).size())
+#define all(x) (x).begin(),(x).end()
+#define foreach(it,c) for(typeof((c).begin()) it=(c).begin();it!=(c).end();++it)
+
+bool seen[100000];
+
+class FortunateNumbers {
+public:
+   bool isFortunate(int n) {
+      int x = n;
+      while(x > 0) {
+         int d = x%10;
+         if(d == 5 || d== 8) {
+            x/=10;
+            continue;
+         }
+         return false;
+      }
+      return true;
+   }
+
+   int getFortunate( vector <int> a, vector <int> b, vector <int> c ) {
+      int res = 0;
+      memset(seen,false,sizeof(seen));
+      for(int i = 0; i < sz(a); ++i) {
+         for(int j = 0; j < sz(b); ++j) {
+            for(int k = 0; k < sz(c); ++k) {
+               int nxt = a[i] + b[j] + c[k];
+               if(isFortunate(nxt) && !seen[nxt]) {
+                  res++;
+                  seen[nxt] = true;
+               }
+            }
+         }
+      }
+      return res;
+   }
+};
+
+
+
+
+// Powered by FileEdit
+// Powered by moj 4 beta 2 [modified TZTester]
+// Powered by CodeProcessor

@@ -1,0 +1,6 @@
+Between 1 and 10, 6 has a maximum of 4 divisors.
+Between 1000 and 1000, 1000 has a maximum of 16 divisors.
+Between 999999900 and 1000000000, 999999924 has a maximum of 192 divisors.
+Between 9 and 9, 9 has a maximum of 3 divisors.
+Between 4 and 4, 4 has a maximum of 3 divisors.
+Between 16 and 16, 16 has a maximum of 5 divisors.
