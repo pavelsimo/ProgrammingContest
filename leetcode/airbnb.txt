@@ -1,0 +1,23 @@
+    336     Palindrome Pairs    26.4%   Hard    
+    251     Flatten 2D Vector   40.7%   Medium  
+    269     Alien Dictionary    24.6%   Hard    
+    68  Text Justification  19.3%   Hard    
+    1   Two Sum     35.3%   Easy    
+    198     House Robber    39.2%   Easy    
+    212     Word Search II  23.6%   Hard    
+    219     Contains Duplicate II   32.5%   Easy    
+    10  Regular Expression Matching     24.2%   Hard    
+    202     Happy Number    40.9%   Easy    
+    108     Convert Sorted Array to Binary Search Tree  42.4%   Easy    
+    136     Single Number   54.7%   Easy    
+    2   Add Two Numbers     27.9%   Medium  
+    160     Intersection of Two Linked Lists    30.7%   Easy    
+    217     Contains Duplicate  46.0%   Easy    
+    190     Reverse Bits    29.5%   Easy    
+    20  Valid Parentheses   33.5%   Easy    
+    220     Contains Duplicate III  19.0%   Medium  
+    415     Add Strings     41.5%   Easy    
+    385     Mini Parser     30.6%   Medium  
+    227     Basic Calculator II     29.4%   Medium  
+    221     Maximal Square  29.3%   Medium  
+    23  Merge k Sorted Lists    27.5%   Hard 

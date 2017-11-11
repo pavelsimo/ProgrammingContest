@@ -1,0 +1,29 @@
+238     Product of Array Except Self    49.4%   Medium  
+    1   Two Sum     35.3%   Easy    
+    42  Trapping Rain Water     36.9%   Hard    
+    206     Reverse Linked List     45.8%   Easy    
+    191     Number of 1 Bits    39.8%   Easy    
+    237     Delete Node in a Linked List    46.8%   Easy    
+    284     Peeking Iterator    35.5%   Medium  
+    240     Search a 2D Matrix II   38.7%   Medium  
+    48  Rotate Image    39.2%   Medium  
+    149     Max Points on a Line    15.3%   Hard    
+    102     Binary Tree Level Order Traversal   40.3%   Medium  
+    70  Climbing Stairs     40.2%   Easy    
+    36  Valid Sudoku    36.1%   Medium  
+    215     Kth Largest Element in an Array     39.5%   Medium  
+    236     Lowest Common Ancestor of a Binary Tree     29.9%   Medium  
+    4   Median of Two Sorted Arrays     22.0%   Hard    
+    104     Maximum Depth of Binary Tree    53.0%   Easy    
+    28  Implement strStr()  28.3%   Easy    
+    190     Reverse Bits    29.5%   Easy    
+    7   Reverse Integer     24.5%   Easy    
+    221     Maximal Square  29.3%   Medium  
+    165     Compare Version Numbers     20.3%   Medium  
+    151     Reverse Words in a String   15.7%   Medium  
+    207     Course Schedule     32.5%   Medium  
+    257     Binary Tree Paths   39.1%   Easy    
+    69  Sqrt(x)     28.0%   Easy    
+    21  Merge Two Sorted Lists  39.2%   Easy    
+    118     Pascal's Triangle   38.9%   Easy    
+    383     Ransom Note     47.3%   Easy 
